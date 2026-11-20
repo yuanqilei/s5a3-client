@@ -1,0 +1,13 @@
+{
+  "ApiUrl": "https://<YOUR_SERVER_IP>:8443",
+  "GameHost": "<YOUR_SERVER_IP>",
+  "BootstrapPort": 7001,
+  "ChannelServerId": 0,
+  "MinimumLauncherVersion": "0.2.18",
+  "DefaultClientDirectory": "",
+  "CertificateSha256": "<YOUR_CERT_SHA256>",
+  "UpdatePublicKey": "-----BEGIN PUBLIC KEY-----\n<YOUR_UPDATE_PUBLIC_KEY_B64>\n-----END PUBLIC KEY-----",
+  "ExeSha256": "<CLIENT_EXE_SHA256>",
+  "PvfSha256": "<PVF_SHA256>",
+  "SettingsUrl": "https://<YOUR_SERVER_IP>:8443/launcher/settings.json"
+}

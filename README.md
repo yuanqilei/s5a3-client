@@ -1,34 +1,33 @@
-# S5A3 Client
+# S5A3 Client（客户端补丁与版本清单）
 
-S5A3 客户端补丁制作脚本、自有改动、玩家安装与更新说明、版本清单和校验值。
+> 本仓只保存客户端补丁说明、版本清单、校验值和脱敏配置示例。
+> 二进制产物（v216 补丁 ZIP、Script.pvf、PurpleMagic 登录器 EXE）**不提交 Git**，作为对应 Release 附件分发，摘要见 `SHA256SUMS.txt`。
+> 真实 `profile.json` 含服务器地址与线上配置，禁止进公开仓；本仓只提供 `profile.example.json`（占位值）。
+> 登录器源码与发布在 [`purplemagic-nexus`](https://github.com/yuanqilei/purplemagic-nexus)。
 
-## 归属
+---
 
-- 上游：`Cec1c/ServerS5A3` releases，PVF `pvf-current-server-20261115-66482976`，客户端 v215/v216
-- 原始资料：`06_升级交付-PVF客户端登录器-20261119`（v216 补丁 ZIP、profile、频道文件、校验和）
+# S5A3 客户端、PVF 与登录器 1.0.16 离线交付（原始交付说明）
 
-## 迁入范围
+生成日期：2026-11-19。来源：`Cec1c/ServerS5A3` Releases；登录器由交接的②号源码和③号构建输入编译。此目录是待部署产物，线上服务、玩家更新通道与 GitHub Release 尚未切换。
 
-- 客户端补丁制作脚本（脚本和源码，不提交二进制成品）
-- 玩家安装 / 更新 / 回滚说明
-- 版本清单、`SHA256SUMS`
-- 完整包 / 补丁包的明确标注
+## 选用组合
 
-## 重要：v216 ZIP 不是完整客户端
+- PVF：`Script.pvf`，128,720,006 字节，SHA-256 `664829766ab016ad6935370281bb24820e40990a6db4d607607aa67b49d8da4b`。
+- 客户端：v216 预发行补丁，需把 `DNF.exe`、`CombatPower.dll`、`DpsMeter.dll`、`ImagePacks2` 中的 NPK **成套合并**到现有客户端；保留现有依赖和玩家 INI。v216 ZIP 不含 PVF。
+- 本次 `profile.json` 和登录器按 v216 EXE SHA-256 `58e51fba3258a9499e77caedaea16a6d9f38904054e10edd91564e24894547c4` 构建。
+- 登录器：`PurpleMagic-1.0.16.exe`，23,832,064 字节，SHA-256 `42e91426be92d2e9bf615f7a7316bed036af72f4d622358213e696fad69dbdbc`。此目录只保留部署用的单文件 EXE。
+- `channel.override.etc` 来自①号源码的推荐 120 频道表，和源码内测试数据逐字节一致；替换线上频道表前仍须核对当前运行配置。
 
-v216 ZIP 只有 EXE、两个 DLL 和 NPK 等补丁内容。制作玩家整包必须在合法可用的基础客户端上合并补丁与同代 Script.pvf，核对文件清单、启动方式和 SHA256。基础客户端不可用时，只发布标明前置条件的补丁包。先核对上游许可证及二进制再分发条件，不要假定客户端二进制可公开再分发。
+所有文件的完整摘要见 `SHA256SUMS.txt`。`profile.json` 含服务地址、公钥及资源摘要，无口令、Token 或私钥；请不要放进公开源码仓库。
 
-## 每次 Release 必须记录
+## 部署次序
 
-客户端版本、上游 tag、PVF 版本及 SHA256、关键文件 SHA256、兼容服务端版本、最低登录器版本、完整包或补丁包、安装 / 回滚步骤。
+1. 备份服务端两处 PVF、数据库 `dnf_local`、`data2/` 与玩家客户端；记录现有摘要和回滚路径。
+2. 将此 `Script.pvf` 同时用于服务端和客户端，核对摘要。按①号源码说明确认 `channel.override.etc` 与实际频道目录同代；重新生成频道目录并重启游戏服。
+3. 用新 PVF 运行 `GMTool -rebuild-index`，等索引完成并核对资源摘要。
+4. 使用 v216 的四项文件整包更新客户端。对应服务端如需启用帝国新协议，参照①号源码 `Docs/SELECTED_PUBLICATION_20261117.md` 显式配置 `tag_buff_group_sync` 和精确客户端身份；v216 的真实 GUI 与完整勇气施放仍需玩家验收。
+5. 将此 `profile.json` 同步到实际 Hub 私有档案与已发布状态，再发布新登录器。`client/versions.json` 已记录 1.0.16 的真实大小和 SHA-256；其中的 GitHub Release URL 需上传同一 EXE 后才能使用。
+6. 核对玩家实际下载结果、登录/注册/建角和频道列表；有问题时按备份回滚 PVF、客户端、登录器、索引和配置。
 
-大文件（PVF、客户端 EXE/DLL/NPK/ZIP）放 Release 附件或对象存储，不提交 Git 历史。每个 Release 附 `SHA256SUMS`。
-
-## 配套
-
-- 服务端：`yuanqilei/s5a3-server`
-- 登录器 / GM：`yuanqilei/purplemagic-nexus`
-
-## 许可证
-
-保留上游来源记录；二进制再分发条件未核实前不要公开发包。
+此交付没有访问线上服务器或修改玩家数据。
