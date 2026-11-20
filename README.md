@@ -1,7 +1,8 @@
 # S5A3 Client（客户端补丁与版本清单）
 
-> ⚠️ **当前状态（2026-11-20）**：下列二进制**尚未上传任何 Release**，
-> 因此本仓目前不能独立拿到 PVF / v216 补丁 / 登录器；请先按 `RELEASE-ASSETS.md` 建 Release。
+> ✅ **已发布（2026-11-20）**：三个公开资产见
+> [client-v216-20261119](https://github.com/yuanqilei/s5a3-client/releases/tag/client-v216-20261119)（PVF 66482976 / v216 补丁 / 登录器 1.0.16）。
+> `profile.json` 含服务器地址，不随 Release 公开。
 >
 > 本仓只保存客户端补丁说明、版本清单、校验值和脱敏配置示例。
 > 二进制产物（v216 补丁 ZIP、Script.pvf、PurpleMagic 登录器 EXE）**不提交 Git**，作为对应 Release 附件分发，摘要见 `SHA256SUMS.txt`。

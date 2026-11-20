@@ -14,5 +14,5 @@
 
 ## 状态
 
-- [ ] `client-v216-20261119` Release 已创建并上传 3 个公开资产
-- [ ] `profile.json` 已私下交付（含服务器地址，禁止公开）
+- [x] [`client-v216-20261119`](https://github.com/yuanqilei/s5a3-client/releases/tag/client-v216-20261119) 已创建并上传 3 个公开资产（2026-11-20）
+- [ ] `profile.json` 待私下交付（含服务器地址，禁止公开）
