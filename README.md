@@ -4,6 +4,10 @@
 > [client-v216-20261119](https://github.com/yuanqilei/s5a3-client/releases/tag/client-v216-20261119)（PVF 66482976 / v216 补丁 / 登录器 1.0.16）。
 > `profile.json` 含服务器地址，不随 Release 公开。
 >
+> 🎨 **补充发布（2026-11-21）**：v216 战令与每日活跃度贴图补丁见
+> [client-v216-activity-npk-20261121](https://github.com/yuanqilei/s5a3-client/releases/tag/client-v216-activity-npk-20261121)。
+> 这是独立 NPK 补丁，不替换 EXE、DLL 或 PVF；实机画面验收待完成。
+>
 > 本仓只保存客户端补丁说明、版本清单、校验值和脱敏配置示例。
 > 二进制产物（v216 补丁 ZIP、Script.pvf、PurpleMagic 登录器 EXE）**不提交 Git**，作为对应 Release 附件分发，摘要见 `SHA256SUMS.txt`。
 > 真实 `profile.json` 含服务器地址与线上配置，禁止进公开仓；本仓只提供 `profile.example.json`（占位值）。

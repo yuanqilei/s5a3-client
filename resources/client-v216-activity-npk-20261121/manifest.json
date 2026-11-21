@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "release": "client-v216-activity-npk-20261121",
+  "kind": "supplemental activity window image packs",
+  "targetClient": {
+    "release": "client-v216-20261119",
+    "dnfExeSha256": "58e51fba3258a9499e77caedaea16a6d9f38904054e10edd91564e24894547c4",
+    "pvfSha256": "664829766ab016ad6935370281bb24820e40990a6db4d607607aa67b49d8da4b"
+  },
+  "sourceResource": {
+    "release": "resources-selected-20261101",
+    "archive": "resources-selected-20261101-player.zip",
+    "archiveSha256": "2bdf997a4f4eb7671daa2d7923f68890471914c26eea5f8ec973640c771c874b",
+    "sourcePvfSha256": "95147859374186dbeb99f998829a1c642f949e56942ac98be8b5af4492aefe1c"
+  },
+  "items": [
+    {
+      "path": "ImagePacks2/sprite_interface2_cs_shop_cs_battlpass.NPK",
+      "bytes": 475234,
+      "sha256": "6f92cb8d880aa9887aada0a9046598c4a45188676ca6c6f63eb715a76e507ccc"
+    },
+    {
+      "path": "ImagePacks2/sprite_interface2_localbattlepass_light95.NPK",
+      "bytes": 324248,
+      "sha256": "886179d9f49dac8d0e287e8712d398f70f45f005512c737c582209ffdc9b7555"
+    },
+    {
+      "path": "ImagePacks2/sprite_interface2_localbattlepass_windowcommon95.NPK",
+      "bytes": 177966,
+      "sha256": "ff3d7e2bc51a3e68741ba118e8ff2bceaca6a8c4bb5b430156cc533ca060ce82"
+    },
+    {
+      "path": "ImagePacks2/sprite_interface_privateactivity010.NPK",
+      "bytes": 325146,
+      "sha256": "4fa1c2be179eacb3ef7c56a0b6e07c558b168b61cc3bb3468fcbb2a341df7840"
+    }
+  ],
+  "verification": {
+    "releaseArchiveSha256Verified": true,
+    "eachNpkSha256Verified": true,
+    "imgPathsAndFrameCountsVerified": true,
+    "inGameVisualVerified": false
+  },
+  "notes": [
+    "Supplemental NPK-only patch for the v216 client; does not replace DNF.exe, DLLs, or Script.pvf.",
+    "The source resource archive is associated with a different PVF snapshot. This patch records the exact target client identity and source resource identity separately.",
+    "Restart the client after installation. In-game visual verification is pending."
+  ]
+}
