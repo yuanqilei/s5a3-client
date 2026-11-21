@@ -16,5 +16,5 @@
 ## 状态
 
 - [x] [`client-v216-20261119`](https://github.com/yuanqilei/s5a3-client/releases/tag/client-v216-20261119) 已创建并上传 3 个公开资产（2026-11-20）
-- [ ] `client-v216-activity-npk-20261121` 补充 NPK 预发行：待上传 Release 附件并发布
+- [x] [`client-v216-activity-npk-20261121`](https://github.com/yuanqilei/s5a3-client/releases/tag/client-v216-activity-npk-20261121) 补充 NPK 预发行，附件已上传（2026-11-21）
 - [ ] `profile.json` 待私下交付（含服务器地址，禁止公开）
